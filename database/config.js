@@ -3,9 +3,7 @@ const mongoose = require('mongoose');
 const dbConecction = async () => {
     try {
         mongoose.set('strictQuery', false);
-        await mongoose.connect(
-            'mongodb+srv://brycot_node_cafe:StNDG7sTJkhQqGmk@miclustercafe.vjbzm22.mongodb.net/cafeDB'
-        );
+        await mongoose.connect(process.env.MONGODB_CNN);
         console.log('Base de datos online');
     } catch (error) {
         console.log(error);
